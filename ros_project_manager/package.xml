@@ -1,0 +1,17 @@
+<package format="2">
+  <name>ros_project_manager</name>
+  <version>0.0.0</version>
+  <description>
+    Project manager
+  </description>
+  <maintainer email="h-yaguchi@947d-tech.co.jp">Hiroaki Yaguchi</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>ros_package_manager</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+</package>
