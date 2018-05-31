@@ -17,9 +17,9 @@ if __name__ == '__main__':
   rospack = rospkg.RosPack()
   pack_path = ''
   try:
-    pack_path = rospack.get_path(sys.argv[1])
+    pack_path = rospack.get_path(argv[1])
   except(rospkg.common.ResourceNotFound):
-    print 'error: ' + sys.argv[1] + ' :unknown pacakge'
+    print 'error: ' + argv[1] + ' :unknown pacakge'
     quit()
 
   # xml parse
@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
   # header information
   name = root.find('name').text
-  if name != sys.argv[1]:
+  if name != argv[1]:
     print 'mismatch package name?: ' + name
     quit()
   else:
@@ -101,8 +101,8 @@ if __name__ == '__main__':
         dependencies[item][depend_flag] = True
   print dependencies
 
-
   # cmake parse
+  print "parsing CMakeLists.txt..."
   command_list = []
   comment_pat = re.compile(r'(?P<bd>.*)(?:\#)')
   cmd_pat = re.compile(r'(?P<cmd>.*)(?:\()(?P<left>.*)')
